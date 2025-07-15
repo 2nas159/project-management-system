@@ -1,4 +1,4 @@
-# Build a Complete Project Management Dashboard
+# A Complete Project Management Dashboard
 
 This repository hosts the code for a comprehensive tutorial on building a Project Management Dashboard using Next.js, Node.js, and AWS services.
 
@@ -25,7 +25,7 @@ Ensure you have these tools installed:
 ### Installation Steps
 
 1. Clone the repository:
-   `git clone [git url]`
+   `git clone "https://github.com/2nas159/project-management-system.git"`
    `cd project-management`
 
 2. Install dependencies in both client and server:

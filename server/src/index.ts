@@ -35,4 +35,4 @@ app.use("/users", userRoutes);
 app.use("/teams", teamRoutes);
 
 /* EXPORT SERVERLESS HANDLER */
-export const handler = serverless(app);
+export default serverless(app);

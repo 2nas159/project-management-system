@@ -1,4 +1,3 @@
-import serverless from "serverless-http";
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
@@ -13,7 +12,7 @@ import searchRoutes from "./routes/searchRoutes";
 import userRoutes from "./routes/userRoutes";
 import teamRoutes from "./routes/teamRoutes";
 
-/* CONFIGURATIONS */
+/* CONFIG */
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -25,14 +24,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 /* ROUTES */
-app.get("/", (req, res) => {
-  res.send("This is home route");
+app.get("/", (req: Request, res: Response) => {
+  res.send("🚀 Server is running!");
 });
+
 app.use("/projects", projectRoutes);
 app.use("/tasks", taskRoutes);
 app.use("/search", searchRoutes);
 app.use("/users", userRoutes);
 app.use("/teams", teamRoutes);
 
-/* EXPORT SERVERLESS HANDLER */
-export default serverless(app);
+/* START SERVER */
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`✅ Server listening on port ${port}`);
+});
